@@ -35,6 +35,7 @@ class DockerCommand(object):
 
         run_docker_cmd = '%s -w ${PWD}' % (run_docker_cmd)
         run_docker_cmd = '%s %s' % (run_docker_cmd, self._docker_image)
+        LOG.info(run_docker_cmd)
         if (self._with_entrypoint):
             run_docker_cmd = '%s %s' % (run_docker_cmd, prg_cmd)
         else:
